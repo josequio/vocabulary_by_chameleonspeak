@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js"
+      crossorigin="anonymous"></script>
+   <script type="importmap">
+   {
+      "imports": {
+         "firebase-app": "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js",
+         "firebase-auth": "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js",
+         "firebase-firestore": "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js",
+         "lit": "https://ga.jspm.io/npm:lit@3.0.0/index.js"
+      },
+      "scopes": {
+         "https://ga.jspm.io/": {
+         "@lit/reactive-element": "https://ga.jspm.io/npm:@lit/reactive-element@2.0.0/development/reactive-element.js",
+         "lit-element/lit-element.js": "https://ga.jspm.io/npm:lit-element@4.0.0/development/lit-element.js",
+         "lit-html": "https://ga.jspm.io/npm:lit-html@3.0.0/development/lit-html.js",
+         "lit-html/is-server.js": "https://ga.jspm.io/npm:lit-html@3.0.0/development/is-server.js"
+         }
+      }
+   }
+   </script>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/index.css">
+   <title>Document</title>
+</head>
+
+<body>
+   <!-- My web components -->
+   <app-access imagenSrc="/images/icons/icons8-logo-de-google-48.png"></app-access>
+
+   <!-- <main>
+      <button type="button" class="login-with-google-btn" id="login">
+         <div class="btn-container-img">
+            <img src="/images/icons/icons8-logo-de-google-48.png" alt="logo de google">
+         </div>
+         <p class="btn-description-p">Sign in with Google</p>
+      </button>
+      <button id="logout">Cerrar sesión</button>
+   </main> -->
+
+   
+
+
+   <script type="module" src="./script/app.js"></script>
+</body>
+
+</html>
