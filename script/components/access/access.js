@@ -18,13 +18,13 @@ export class Access extends LitElement {
          justify-content: center;
          align-items: center;
          gap: 1rem;
-         padding: 0.2rem 0.6rem;
+         padding: 0rem 0.6rem;
          background-color: white;
          border-radius: 0.3rem;
          border: none;
          cursor: pointer;
          box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
-         color: #11111157;
+         color: black;
          }
      
       button:hover{

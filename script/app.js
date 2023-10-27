@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase-app";
 import { Access } from "./components/access/access.js";
 import { Error } from "./components/error/error.js"; 
+import { Vocabulary } from "./components/vocabulary/formVocabulary.js";
 import tree from './state.js'
 
 
@@ -26,10 +27,22 @@ import("../script/firebase/auth.js").then(({ auth }) => {
     });   
 });
 
+import("./firebase/users.js").then(({createUser}) => {
+    tree.select('user').on('update', (e) => {
+        console.log(e)
+        let user = e.data.currentData;
+        if(user){
+            createUser(user);
+        }
+    });
+
+});
 
 
 
 customElements.define('app-access', Access);
 customElements.define('app-error', Error);
+
+customElements.define('app-vocabulary',Vocabulary);
 /* 55min */
 

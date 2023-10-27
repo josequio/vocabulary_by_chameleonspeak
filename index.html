@@ -26,27 +26,30 @@
    </script>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <link rel="stylesheet" href="/index.css">
    <title>Document</title>
 </head>
 
 <body>
-   <!-- My web components -->
-   <app-access imagenSrc="/images/icons/icons8-logo-de-google-48.png"></app-access>
-
-   <app-error></app-error>
-
-   <!-- <main>
-      <button type="button" class="login-with-google-btn" id="login">
-         <div class="btn-container-img">
-            <img src="/images/icons/icons8-logo-de-google-48.png" alt="logo de google">
+   <main>
+      <section class="section_login">
+         <div class="title-and-button">
+            <h2 class="vocabulary_title"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
+            <!-- My web components -->
+            <app-access imagenSrc="/images/icons/icons8-logo-de-google-48.png"></app-access>
+            <app-error></app-error>
          </div>
-         <p class="btn-description-p">Sign in with Google</p>
-      </button>
-      <button id="logout">Cerrar sesión</button>
-   </main> -->
+      </section>
 
+      <section class="vocabulary">
+         <app-vocabulary></app-vocabulary>
+      </section>
 
+     <!--  <section class="">
+
+      </section> -->
+   </main>
 
 
    <script type="module" src="./script/app.js"></script>
