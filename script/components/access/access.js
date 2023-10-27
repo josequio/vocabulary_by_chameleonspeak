@@ -45,7 +45,7 @@ export class Access extends LitElement {
 
    constructor() {
       super();
-      /* this.user = null; */
+      this.user = null;
       this.imagenSrc = 'ruta-de-la-imagen.jpg';
       /* Esto es un import dinamico */
       import("../../firebase/auth.js").then(({ login, logout}) => {
@@ -68,17 +68,20 @@ export class Access extends LitElement {
 
    }
 
+   /* ${function(){this.logout()}} o ${this.logout}
+   nota: si necesitas que la función se ejecute inmediatamente, puedes usar la primera sintaxis con la expresión de función anónima. Si solo necesitas una referencia a la función sin ejecutarla de inmediato, la segunda sintaxis es suficiente.
+  */
    accessButtons() {
       if (this.user) {
          return html`
-            <button id="logout" @click=${this.logout}>
+            <button id="logout" @click=${function(){this.logout()}}>
                Cerrar  sesión
             </button>
             <p>${this.user.displayName} </p>
          `;
       }
       return html`
-            <button @click=${this.login} >
+            <button @click=${function(){this.login()}} >
                <img src="${this.imagenSrc} " alt="logo de google">
                <p class="btn-description-p">Sign in with Google</p>
             </button>
