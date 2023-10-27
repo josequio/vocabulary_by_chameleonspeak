@@ -11,7 +11,7 @@ export const auth = getAuth(app);
 export function login(){
     const googleProvider = new GoogleAuthProvider();
 
-    signInWithPopup(auth, googleProvider);
+    return signInWithPopup(auth, googleProvider);
 }
 
 /* exportando funcion logout */

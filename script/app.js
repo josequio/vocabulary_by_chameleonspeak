@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase-app";
-import { Access } from "./components/access/access.js"; 
+import { Access } from "./components/access/access.js";
+import { Error } from "./components/error/error.js"; 
 import tree from './state.js'
 
 
@@ -15,9 +16,13 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 
-import("../../firebase/auth.js").then(({ auth }) => {
+import("../script/firebase/auth.js").then(({ auth }) => {
     /* Verificar cambios en el estado de autenticacion */
     auth.onAuthStateChanged((user) => {
+        /* el argumento user se actuliza al hacer un cambio de inicio de sesion, cambiando el valor de user en state.js  */
+        tree.select('user').set(
+            JSON.parse(JSON.stringify(user))
+        )
     });   
 });
 
@@ -25,5 +30,6 @@ import("../../firebase/auth.js").then(({ auth }) => {
 
 
 customElements.define('app-access', Access);
+customElements.define('app-error', Error);
 /* 55min */
 

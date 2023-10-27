@@ -1,7 +1,8 @@
 import Baobab from 'baobab';
 
 const tree = new Baobab({
-    user: null
+    user: null,
+    error: null
 });
 
 export default tree;

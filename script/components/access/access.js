@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import tree from '../../state.js'
 
 
 export class Access extends LitElement {
@@ -47,15 +48,24 @@ export class Access extends LitElement {
       /* this.user = null; */
       this.imagenSrc = 'ruta-de-la-imagen.jpg';
       /* Esto es un import dinamico */
-      import("../../firebase/auth.js").then(({ login, logout, auth }) => {
-         /* Verificar cambios en el estado de autenticacion */
-         auth.onAuthStateChanged((user) => {
-            console.log(user)
-            this.user = user;
-         });
-         this.login = login;
+      import("../../firebase/auth.js").then(({ login, logout}) => {
+         /* Manejo de error en google */
+         this.login = function(){
+            login().then(()=>{}).catch(err =>{
+               /* con set , estamos enviando al manejador de estados el ERROR capturado */
+               tree.select('error').set(err);
+            })
+         };
+
          this.logout = logout;
       });
+
+      /* Accedemos a state.js para saber la actualizacion del estado de user Y traemos la nueva actualizacion con e.data.currentData */
+      tree.select('user').on('update',(e) => {
+         /* console.log(e); */
+         this.user = e.data.currentData;
+      });
+
    }
 
    accessButtons() {
@@ -84,4 +94,4 @@ export class Access extends LitElement {
    }
 }
 
-/* time 52min */
+/* time 1.185min en adelante codiog pra github */
