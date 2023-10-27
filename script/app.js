@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase-app";
 import { Access } from "./components/access/access.js"; 
+import tree from './state.js'
 
 
 const firebaseConfig = {
@@ -14,15 +15,13 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 
-/* Esto es un import dinamico */
-import("./firebase/auth.js").then(function ({ login, logout, auth}) {
-
-    /* Verificar si usuario esta autenticado */
-    auth.onAuthStateChanged(function (user) {
-      
-    })
-
+import("../../firebase/auth.js").then(({ auth }) => {
+    /* Verificar cambios en el estado de autenticacion */
+    auth.onAuthStateChanged((user) => {
+    });   
 });
+
+
 
 
 customElements.define('app-access', Access);

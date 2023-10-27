@@ -1,11 +1,12 @@
-import { LitElement, html, css} from 'lit';
+import { LitElement, html, css } from 'lit';
 
 
 export class Access extends LitElement {
 
-   static get properties(){
+   static get properties() {
       return {
-         imagenSrc: {type: String}
+         user: { type: Object },
+         imagenSrc: { type: String }
       }
    }
 
@@ -43,21 +44,44 @@ export class Access extends LitElement {
 
    constructor() {
       super();
+      /* this.user = null; */
       this.imagenSrc = 'ruta-de-la-imagen.jpg';
+      /* Esto es un import dinamico */
+      import("../../firebase/auth.js").then(({ login, logout, auth }) => {
+         /* Verificar cambios en el estado de autenticacion */
+         auth.onAuthStateChanged((user) => {
+            console.log(user)
+            this.user = user;
+         });
+         this.login = login;
+         this.logout = logout;
+      });
+   }
+
+   accessButtons() {
+      if (this.user) {
+         return html`
+            <button id="logout" @click=${this.logout}>
+               Cerrar  sesión
+            </button>
+            <p>${this.user.displayName} </p>
+         `;
+      }
+      return html`
+            <button @click=${this.login} >
+               <img src="${this.imagenSrc} " alt="logo de google">
+               <p class="btn-description-p">Sign in with Google</p>
+            </button>
+            `;
    }
 
    render() {
       return html`
-      <div>
-         <button id="login">
-            <img src="${this.imagenSrc} " alt="logo de google">
-            <p class="btn-description-p">Sign in with Google</p>
-         </button>
-         <button id="logout">Cerrar sesión</button>
-      
-      </div>
+         <div>
+            ${this.accessButtons()}
+         </div>
       `;
    }
 }
 
-/* time 19min */
+/* time 52min */
