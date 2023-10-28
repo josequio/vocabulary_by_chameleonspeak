@@ -2,7 +2,10 @@ import { initializeApp } from "firebase-app";
 import { Access } from "./components/access/access.js";
 import { Error } from "./components/error/error.js"; 
 import { Vocabulary } from "./components/vocabulary/formVocabulary.js";
+import { VocabularyList } from "./components/vocabulary/listVocabulary.js";
+import { Word } from "./components/vocabulary/wordVocabulary.js";
 import tree from './state.js'
+import { Logout } from "./components/access/logout.js";
 
 
 const firebaseConfig = {
@@ -42,7 +45,10 @@ import("./firebase/users.js").then(({createUser}) => {
 
 customElements.define('app-access', Access);
 customElements.define('app-error', Error);
+customElements.define('app-logout',Logout);
 
-customElements.define('app-vocabulary',Vocabulary);
+customElements.define('app-vocabulary-form',Vocabulary);
+customElements.define('app-vocabulary-list',VocabularyList);
+customElements.define('app-vocabulary-word', Word);
 /* 55min */
 

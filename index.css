@@ -18,9 +18,17 @@ main{
     background-position: center;
 }
 
+main header{
+    height: 2.3rem;
+    position:sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+}
+
 .section_login{
     background-color: rgba(0, 0, 0, 0.492);
-    height: 100%;
+    height: calc(100% - 2.3rem);
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -74,14 +74,14 @@ export class Access extends LitElement {
    accessButtons() {
       if (this.user) {
          return html`
-            <button id="logout" @click=${function(){this.logout()}}>
+            <button id="logout" class="logout" @click=${function(){this.logout()}}>
                Cerrar  sesión
             </button>
             <p>${this.user.displayName} </p>
          `;
       }
       return html`
-            <button @click=${function(){this.login()}} >
+            <button id="login" class="login" @click=${function(){this.login()}} >
                <img src="${this.imagenSrc} " alt="logo de google">
                <p class="btn-description-p">Sign in with Google</p>
             </button>

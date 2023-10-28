@@ -28,11 +28,20 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <link rel="stylesheet" href="/index.css">
+   <link rel="stylesheet" href="/style/header.css">
    <title>Document</title>
 </head>
 
 <body>
    <main>
+      <header class="header">
+         <a class="header_logo">
+            <img src="./images/icons/icon_logo.png" alt="">
+         </a>
+         <nav>
+            <app-logout></app-logout>
+         </nav>
+      </header>
       <section class="section_login">
          <div class="title-and-button">
             <h2 class="vocabulary_title"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
@@ -42,8 +51,9 @@
          </div>
       </section>
 
-      <section class="vocabulary">
-         <app-vocabulary></app-vocabulary>
+      <section class="vocabulary" id="vocabulary">
+         <app-vocabulary-form></app-vocabulary-form>
+         <app-vocabulary-list></app-vocabulary-list>
       </section>
 
      <!--  <section class="">
