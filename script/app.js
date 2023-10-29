@@ -4,6 +4,8 @@ import { Error } from "./components/error/error.js";
 import { Vocabulary } from "./components/vocabulary/formVocabulary.js";
 import { VocabularyList } from "./components/vocabulary/listVocabulary.js";
 import { Word } from "./components/vocabulary/wordVocabulary.js";
+import { Footer } from "./components/footer/footer.js";
+
 import tree from './state.js'
 import { Logout } from "./components/access/logout.js";
 
@@ -50,6 +52,7 @@ customElements.define('app-logout',Logout);
 customElements.define('app-vocabulary-form',Vocabulary);
 customElements.define('app-vocabulary-list',VocabularyList);
 customElements.define('app-vocabulary-word', Word);
+customElements.define('app-vocabulary-footer', Footer);
 /* 55min */
 
 

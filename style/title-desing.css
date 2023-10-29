@@ -1,0 +1,25 @@
+.title-design{
+    text-align: center;
+}
+
+.title-design>span:first-child{
+    padding: 0.2rem;
+    font-size: 1.7rem;
+    text-align: center;
+    background-color: #00539a;
+    border-radius: 0.3rem;
+    color: aliceblue;
+}
+
+.title-design>span:nth-child(2){
+    padding: 0.1rem;
+    background-color: #ffd94e;
+    border-radius: 0.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 400;
+    
+}
+
+.title-design>span{
+    font-size: 0.9rem;
+}

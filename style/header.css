@@ -13,6 +13,7 @@
 
 .header_logo img{
     width: 3rem;
+
 }
 
 .header .nav{
@@ -20,5 +21,11 @@
 }
 
 .header>.nav .login{
-   display: none; 
+    display: none; 
+}
+
+@media (max-width: 768px) {
+    .header{
+        padding: 0 0.6rem;
+    }
 }

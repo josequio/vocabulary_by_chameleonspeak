@@ -47,7 +47,7 @@ export class Logout extends LitElement {
     logoutButtons() {
         if (this.user) {
             return html`
-            <img src="${this.user.photoURL}" alt="Foto de perfil">
+            <img src="${this.user.photoURL}" alt="Foto de perfil"> 
             <button id="logout" class="logout" @click=${function () { this.logout() }}>
                Cerrar  sesión
             </button>

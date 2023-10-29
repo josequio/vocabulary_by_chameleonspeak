@@ -28,7 +28,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <link rel="stylesheet" href="/index.css">
-   <link rel="stylesheet" href="/style/header.css">
    <title>Document</title>
 </head>
 
@@ -42,12 +41,12 @@
             <app-logout></app-logout>
          </nav>
       </header>
-      <section class="section_login">
-         <div class="title-and-button">
-            <h2 class="vocabulary_title"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
-            <!-- My web components -->
-            <app-access imagenSrc="/images/icons/icons8-logo-de-google-48.png"></app-access>
-            <app-error></app-error>
+      <app-error></app-error>
+      <section class="presentation">
+         <div class="presentation_container">
+            <h2 class="title-design"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
+            <p>Vocabulary and Writing by ChamelonSpeak es una herramienta que complementa tó proceso de aprendizaje de un nuevo idioma, guarda nuevas palabra, crea oraciones y vizualiza el seguimiento de practica segun los tiempos verbales. </p>
+            <app-access class="app-access" imagenSrc="/images/icons/icons8-logo-de-google-48.png">hola</app-access>
          </div>
       </section>
 
@@ -55,6 +54,8 @@
          <app-vocabulary-form></app-vocabulary-form>
          <app-vocabulary-list></app-vocabulary-list>
       </section>
+
+      <app-vocabulary-footer></app-vocabulary-footer>
 
      <!--  <section class="">
 

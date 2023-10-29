@@ -1,3 +1,7 @@
+@import url(/style/header.css);
+@import url(/style/title-desing.css);
+
+
 *{
     padding: 0;
     margin: 0;
@@ -26,7 +30,7 @@ main header{
 
 }
 
-.section_login{
+section.presentation{
     background-color: rgba(0, 0, 0, 0.492);
     height: calc(100% - 2.3rem);
     display: flex;
@@ -35,39 +39,26 @@ main header{
     align-items: center;
 }
 
-/* title ------------------*/
-
-.vocabulary_title{
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.vocabulary_title>span:first-child{
-    padding: 0.2rem;
-    font-size: 1.7rem;
-    text-align: center;
-    background-color: #00539a;
-    border-radius: 0.3rem;
-    color: aliceblue;
-}
-
-.vocabulary_title>span:nth-child(2){
-    padding: 0.1rem;
-    background-color: #ffd94e;
-    border-radius: 0.1rem;
-    color: rgb(0, 0, 0);
-    
-}
-
-.vocabulary_title>span{
-    font-size: 0.9rem;
-}
-
-
-.title-and-button{
+.presentation_container{
+    height: 100%;
+    max-width: 40rem;
     display: inherit;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff8f8;
+    gap: 1rem;
+    padding: 1rem;
 
+}
+
+.presentation_container p{
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 100;
+    opacity: 0.9;
+}
+
+.presentation_container .app-access{
+    margin-top: 2rem;
 }
