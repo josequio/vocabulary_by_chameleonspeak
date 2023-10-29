@@ -28,6 +28,7 @@ export class Footer extends LitElement {
          }
          footer p{
             font-size: 0.7rem;
+            text-align:center;
          }
       `;
    }

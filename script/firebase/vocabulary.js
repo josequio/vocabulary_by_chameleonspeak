@@ -1,7 +1,7 @@
 import { getFirestore, collection, addDoc, getDocs, doc, deleteDoc, updateDoc} from 'firebase-firestore';
 import { VOCABULARY_STATUS } from './status.js'
 import {app} from '../app.js';
-import { Vocabulary } from '../components/vocabulary/formVocabulary.js';
+import { FormVocabulary } from '../components/vocabulary/formVocabulary.js';
 
 
 export const db = getFirestore(app);

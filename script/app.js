@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase-app";
 import { Access } from "./components/access/access.js";
 import { Error } from "./components/error/error.js"; 
-import { Vocabulary } from "./components/vocabulary/formVocabulary.js";
+import { FormVocabulary } from "./components/vocabulary/formVocabulary.js";
 import { VocabularyList } from "./components/vocabulary/listVocabulary.js";
+import { BodyVocabulary } from "./components/vocabulary/bodyVocabulary.js";
 import { Word } from "./components/vocabulary/wordVocabulary.js";
 import { Footer } from "./components/footer/footer.js";
 
@@ -49,11 +50,12 @@ customElements.define('app-access', Access);
 customElements.define('app-error', Error);
 customElements.define('app-logout',Logout);
 
-customElements.define('app-vocabulary-form',Vocabulary);
+customElements.define('app-vocabulary-form',FormVocabulary);
 customElements.define('app-vocabulary-list',VocabularyList);
+customElements.define('app-vocabulary-body',BodyVocabulary);
 customElements.define('app-vocabulary-word', Word);
 customElements.define('app-vocabulary-footer', Footer);
 /* 55min */
 
 
-navigator.serviceWorker.register('../sw.js')
+/* navigator.serviceWorker.register('../sw.js') */

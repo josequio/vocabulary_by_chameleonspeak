@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import tree from '../../state.js';
 
-export class Vocabulary extends LitElement {
+export class FormVocabulary extends LitElement {
     static get styles() {
         return css`
         form {
@@ -53,15 +53,17 @@ export class Vocabulary extends LitElement {
 
     static get properties() {
         return {
-            word: {type: String},
-            languaje: {type: String},
-            meaning: {type: String},
-            tenseWord: {type: String}
+            user: { type: Object },
+            word: { type: String },
+            languaje: { type: String },
+            meaning: { type: String },
+            tenseWord: { type: String }
         }
     }
 
     constructor() {
         super();
+
         this.word = "";
         this.languaje = "";
         this.meaning = "";
@@ -70,25 +72,26 @@ export class Vocabulary extends LitElement {
         import('../../firebase/vocabulary.js').then(({ createVocabulary }) => {
             this.createVocabulary = createVocabulary;
         })
+
+
     }
 
-    create(e){
+    create(e) {
         e.preventDefault();
         this.createVocabulary(this.word, this.languaje, this.meaning, this.tenseWord);
 
     }
 
-    render() { 
-        
+    render() {
         return html`
-        <p>${console.log(this.word,this.languaje,this.meaning,this.tenseWord)} </p>
-        <form @submit=${ (e) => this.create(e) } >
+        <p>${console.log(this.word, this.languaje, this.meaning, this.tenseWord)} </p>
+        <form @submit=${(e) => this.create(e)} >
         <h2>Vocabulary by ChameleonSpeak </h2>
         <div class="div_word-lang">
             <label for="word"></label>
-            <input type="text" name="word" id="word" placeholder="Introduce la palabra" @input=${ (e)=> {this.word = e.target.value} }>
+            <input type="text" name="word" id="word" placeholder="Introduce la palabra" @input=${(e) => { this.word = e.target.value }}>
 
-            <select name="languaje" id="languaje" @change=${ (e)=> {this.languaje = e.target.value;} }>
+            <select name="languaje" id="languaje" @change=${(e) => { this.languaje = e.target.value; }}>
                 <option value="" selected>Languaje</option>    
                 <option value="EN" >English</option>
                 <option value="PT">Portuguese</option>
@@ -103,7 +106,7 @@ export class Vocabulary extends LitElement {
 
         <div class="form_meaning">
             <label for="meaning">Significado:</label>
-            <input type="text" name="meaning" id="meaning" placeholder="Significado" @input=${ (e)=> {this.meaning = e.target.value} } >
+            <input type="text" name="meaning" id="meaning" placeholder="Significado" @input=${(e) => { this.meaning = e.target.value }} >
         </div>
 
         <fieldset>
@@ -122,7 +125,7 @@ export class Vocabulary extends LitElement {
                     <span>adjective</span>
                 </label>
         </fieldset>
-        <select name="tenseWord" id="tenseWord" @change=${ (e)=> {this.tenseWord = e.target.value;} }>
+        <select name="tenseWord" id="tenseWord" @change=${(e) => { this.tenseWord = e.target.value; }}>
             <option value="" selected>Gramatical Tense</option>
             <option value="PS">Present Simple</option>
             <option value="PC">Present Continuous </option>
@@ -196,10 +199,9 @@ export class Vocabulary extends LitElement {
         </fieldset>
         <button type='submit'>NEW WORD</button>
     </form>
-        `;
+    `;
+
     }
-
-
 
 }
 
