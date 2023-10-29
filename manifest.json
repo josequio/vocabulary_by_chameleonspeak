@@ -1,0 +1,8 @@
+{
+    "name": "App Vocabulary by ChameleonSpeak",
+    "short name": "VyChameleonSpeak",
+    "start-url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "App de vocabulario de ChameleonSpeak"
+}

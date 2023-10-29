@@ -52,3 +52,5 @@ customElements.define('app-vocabulary-list',VocabularyList);
 customElements.define('app-vocabulary-word', Word);
 /* 55min */
 
+
+navigator.serviceWorker.register('../sw.js')
