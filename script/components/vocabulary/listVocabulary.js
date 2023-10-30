@@ -9,6 +9,9 @@ export class VocabularyList extends LitElement{
             h2{
                 text-align: center;
             }
+            p{
+                color:red;
+            }
             @media (max-width: 600px) {
                 div{
                     max-width: 15rem;
@@ -35,6 +38,7 @@ export class VocabularyList extends LitElement{
         return html`
             <div>
                 <h2>My Vocabulary</h2>
+                <p>Por favor realice una recarga a la pagina para visualizar los cambios, funcionalidad en construcción</p>
                 <div class = "scroll">
                 ${
                     this.vocabulary.map(

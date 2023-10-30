@@ -124,11 +124,6 @@ export class FormVocabulary extends LitElement {
     create(e) {
         e.preventDefault();
         this.createVocabulary(this.word, this.languaje, this.meaning, this.tenseWord);
-        setTimeout(function() {
-            if (window.location.vocabulary) {
-                location.reload(true);
-            }
-        }, 1500);
     }
 
     render() {
