@@ -5,7 +5,12 @@ import { FormVocabulary } from "./components/vocabulary/formVocabulary.js";
 import { VocabularyList } from "./components/vocabulary/listVocabulary.js";
 import { BodyVocabulary } from "./components/vocabulary/bodyVocabulary.js";
 import { Word } from "./components/vocabulary/wordVocabulary.js";
+
+import { FormWriting } from "./components/writing/writing-form.js";
+import { BodyWriting } from "./components/writing/writing-body.js";
+import { ListWriting } from "./components/writing/writing-list.js";
 import { Footer } from "./components/footer/footer.js";
+
 
 import tree from './state.js'
 import { Logout } from "./components/access/logout.js";
@@ -54,8 +59,13 @@ customElements.define('app-vocabulary-form',FormVocabulary);
 customElements.define('app-vocabulary-list',VocabularyList);
 customElements.define('app-vocabulary-body',BodyVocabulary);
 customElements.define('app-vocabulary-word', Word);
+
+customElements.define('app-writing-form',FormWriting);
+customElements.define('app-writing-body',BodyWriting);
+customElements.define('app-writing-list',ListWriting);
 customElements.define('app-vocabulary-footer', Footer);
-/* 55min */
 
 
-/* navigator.serviceWorker.register('../sw.js') */
+
+
+navigator.serviceWorker.register('../sw.js');

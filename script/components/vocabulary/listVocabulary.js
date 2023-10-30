@@ -1,6 +1,21 @@
 import { LitElement, html, css } from 'lit';
 
 export class VocabularyList extends LitElement{
+    static get styles(){
+        return css`
+            .scroll{
+                overflow: auto;
+            }
+            h2{
+                text-align: center;
+            }
+            @media (max-width: 600px) {
+                div{
+                    max-width: 15rem;
+                }
+            }
+        `;
+    }
     static get properties(){
         return {
             vocabulary: { type: Array }
@@ -18,8 +33,9 @@ export class VocabularyList extends LitElement{
 
     render(){
         return html`
-            <h2>Vocabulary</h2>
             <div>
+                <h2>My Vocabulary</h2>
+                <div class = "scroll">
                 ${
                     this.vocabulary.map(
                         wordVy => html`
@@ -27,6 +43,7 @@ export class VocabularyList extends LitElement{
                         `
                     )
                 }
+                </div>
                         
             </div> 
         `;

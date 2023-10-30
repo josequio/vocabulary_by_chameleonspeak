@@ -5,6 +5,8 @@ export class FormVocabulary extends LitElement {
     static get styles() {
         return css`
         form {
+            border-radius: 0.4rem;
+            background-color: #717d850f;
             min-width: 17rem;
             max-width: 22rem;
             display: flex;
@@ -12,9 +14,13 @@ export class FormVocabulary extends LitElement {
             align-items: center;
             justify-content: center;
             gap: 0.6rem;
+            padding:0.5rem;
+            margin:0;
         }
         form h2{
             text-align: center;
+            margin:0;
+            padding: 0.5rem;
         }
         
         .form_meaning,
@@ -38,6 +44,7 @@ export class FormVocabulary extends LitElement {
         
         form fieldset>legend{
             text-align: center;
+            color:red;
         }
         
         .form_btn-writing{
@@ -46,6 +53,44 @@ export class FormVocabulary extends LitElement {
             justify-content: center;
             gap: 1rem;
         }
+        form button{
+            cursor: pointer;
+        }
+        a.title-design{
+            text-decoration: none;
+            text-align: center;
+            background-color: #00539a;
+            padding: 0.5rem 0.6rem;
+            border-radius: 0.2rem;
+        }
+
+        a.title-design:hover{
+            background-color: white;
+        }
+        
+        .title-design>span:first-child{
+            padding: 0.2rem;
+            font-size: 1.1rem;
+            text-align: center;
+            background-color: #00539a;
+            border-radius: 0.3rem;
+            color: aliceblue;
+        }
+        
+        .title-design>span:nth-child(2){
+            padding: 0.1rem;
+            font-size: 0.7rem;
+            background-color: #ffd94e;
+            border-radius: 0.1rem;
+            color: rgb(0, 0, 0);
+            font-weight: 400;
+            
+        }
+        
+        .title-design>span{
+            font-size: 0.9rem;
+        }
+
         
         `;
     }
@@ -79,19 +124,22 @@ export class FormVocabulary extends LitElement {
     create(e) {
         e.preventDefault();
         this.createVocabulary(this.word, this.languaje, this.meaning, this.tenseWord);
-
+        setTimeout(function() {
+            if (window.location.vocabulary) {
+                location.reload(true);
+            }
+        }, 1500);
     }
 
     render() {
         return html`
-        <p>${console.log(this.word, this.languaje, this.meaning, this.tenseWord)} </p>
         <form @submit=${(e) => this.create(e)} >
         <h2>Vocabulary by ChameleonSpeak </h2>
         <div class="div_word-lang">
             <label for="word"></label>
-            <input type="text" name="word" id="word" placeholder="Introduce la palabra" @input=${(e) => { this.word = e.target.value }}>
+            <input type="text" name="word" id="word" placeholder="Introduce la palabra" @input=${(e) => { this.word = e.target.value }} required>
 
-            <select name="languaje" id="languaje" @change=${(e) => { this.languaje = e.target.value; }}>
+            <select name="languaje" id="languaje" @change=${(e) => { this.languaje = e.target.value; }} required>
                 <option value="" selected>Languaje</option>    
                 <option value="EN" >English</option>
                 <option value="PT">Portuguese</option>
@@ -106,11 +154,11 @@ export class FormVocabulary extends LitElement {
 
         <div class="form_meaning">
             <label for="meaning">Significado:</label>
-            <input type="text" name="meaning" id="meaning" placeholder="Significado" @input=${(e) => { this.meaning = e.target.value }} >
+            <input type="text" name="meaning" id="meaning" placeholder="Significado" @input=${(e) => { this.meaning = e.target.value }} required>
         </div>
 
-        <fieldset>
-            <legend>Grammatical categories</legend>
+        <fieldset disabled>
+            <legend>Grammatical categories (DISABLED)</legend>
             <div class="div_grammatical-categories">
                 <label for="regVerb">
                     <input type="radio" name="gramatical" id="regVerb" value="regVerb">
@@ -125,7 +173,7 @@ export class FormVocabulary extends LitElement {
                     <span>adjective</span>
                 </label>
         </fieldset>
-        <select name="tenseWord" id="tenseWord" @change=${(e) => { this.tenseWord = e.target.value; }}>
+        <select name="tenseWord" id="tenseWord" @change=${(e) => { this.tenseWord = e.target.value; }} required>
             <option value="" selected>Gramatical Tense</option>
             <option value="PS">Present Simple</option>
             <option value="PC">Present Continuous </option>
@@ -144,12 +192,11 @@ export class FormVocabulary extends LitElement {
 
         <div class="form_btn-writing">
             <p>Crea:</p>
-            <a href="#form_writing" class="btn-writing"><span>Writing</span> <span> by
-                    ChamelonSpeak</span></a>
+            <a href="#writing" class="btn-writing title-design"><span>Writing</span> <span> by ChamelonSpeak</span></a>
         </div>
 
-        <fieldset class="vocabulary_category">
-            <legend>Categoria</legend>
+        <fieldset class="vocabulary_category" disabled>
+            <legend>Categoria (DISABLED)</legend>
             <div class="div_category-topics">
                 <label for="saludos">
                     <input type="checkbox" name="topics" id="saludos" value="saludos">

@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/index.css">
+    <title>Offline</title>
 </head>
+
 <body>
-    <h2>No hay conexion a internet</h2>
-    
+    <main>
+        <header class="header">
+            <a class="header_logo">
+                <img src="./images/icons/icon_logo.png" alt="logo de pagina">
+            </a>
+            <nav>
+                <app-logout></app-logout>
+            </nav>
+        </header>
+        <app-error></app-error>
+        <div class="container_sections">
+            <section class="presentation">
+                <div class="presentation_container">
+                    <h2 class="title-design"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
+                    <h3 style="color: orange;">Lo siento, no tienes conexión a Internet en este momento. Esta página
+                        requiere acceso a la red para funcionar. Por favor, conéctate a Internet y vuelve a intentarlo
+                    </h3>
+                </div>
+            </section>
+        </div>
+        <app-vocabulary-footer></app-vocabulary-footer>
+    </main>
+
 </body>
+
 </html>

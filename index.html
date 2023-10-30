@@ -28,41 +28,43 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <link rel="stylesheet" href="/index.css">
-   <title>Document</title>
+   <title>Vocabulary</title>
 </head>
 
 <body>
    <main>
       <header class="header">
          <a class="header_logo">
-            <img src="./images/icons/icon_logo.png" alt="">
+            <img src="./images/icons/icon_logo.png" alt="logo de pagina">
          </a>
          <nav>
             <app-logout></app-logout>
          </nav>
       </header>
       <app-error></app-error>
-      <section class="presentation">
-         <div class="presentation_container">
-            <h2 class="title-design"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
-            <p>Vocabulary and Writing by ChamelonSpeak es una herramienta que complementa tó proceso de aprendizaje de un nuevo idioma, guarda nuevas palabra, crea oraciones y vizualiza el seguimiento de practica segun los tiempos verbales. </p>
-            <app-access class="app-access" imagenSrc="/images/icons/icons8-logo-de-google-48.png">hola</app-access>
-         </div>
-      </section>
+      <div class="container_sections">
+         <section class="presentation">
+            <div class="presentation_container">
+               <h2 class="title-design"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
+               <p>Vocabulary and Writing by ChamelonSpeak es una herramienta que complementa tú proceso de aprendizaje
+                  de un nuevo idioma, guarda nuevas palabra, crea oraciones y vizualiza el seguimiento de practica según
+                  los tiempos verbales. </p>
+               <app-access class="app-access" imagenSrc="/images/icons/icons8-logo-de-google-48.png">hola</app-access>
+            </div>
+         </section>
 
-      <section class="vocabulary" id="vocabulary">
-         <!-- <app-vocabulary></app-vocabulary> -->
-         <app-vocabulary-body></app-vocabulary-body>
-      </section>
+         <section class="vocabulary" id="vocabulary">
+            <app-vocabulary-body></app-vocabulary-body>
+         </section>
 
+         <section class="writing" id="writing">
+            <app-writing-body></app-writing-body>
+         </section>
+      </div>
       <app-vocabulary-footer></app-vocabulary-footer>
-
-     <!--  <section class="">
-
-      </section> -->
    </main>
 
-
+  
    <script type="module" src="./script/app.js"></script>
 </body>
 

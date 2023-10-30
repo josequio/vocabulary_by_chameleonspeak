@@ -1,18 +1,18 @@
 import { LitElement, html, css } from 'lit';
 import tree from '../../state.js';
 
-export class BodyVocabulary extends LitElement {
+export class BodyWriting extends LitElement {
     static get styles() {
         return css`
-            .container_vocabulary-body{
+            .container_writing-body{
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 grid-template-rows: 100%;
                 padding: 1rem 0;
             }
 
-            .container_component-vocabulary-list,
-            .container_component-vocabulary-form{
+            .container_component-writing-list,
+            .container_component-writing-form{
                 width: 100%;
                 display: flex;
                 align-items: center;
@@ -22,13 +22,13 @@ export class BodyVocabulary extends LitElement {
 
 
             @media (max-width: 600px) {
-                .container_vocabulary-body{
+                .container_writing-body{
                     grid-template-columns: 100%;
                     grid-template-rows: 1fr 1fr;
                 }
 
-                .container_component-vocabulary-list,
-                .container_component-vocabulary-form{
+                .container_component-writing-list,
+                .container_component-writing-form{
                     max-width: 100% ;
                 }
             }
@@ -39,7 +39,7 @@ export class BodyVocabulary extends LitElement {
 
     static get properties() {
         return {
-            user: {type: Object},
+            user: { type: Object },
         }
     }
 
@@ -58,15 +58,14 @@ export class BodyVocabulary extends LitElement {
     vocabularyComponents() {
         if (this.user) {
             return html`
-            <div class="container_vocabulary-body">
-                <div class="container_component-vocabulary-form"> 
-                    <app-vocabulary-form></app-vocabulary-form>   
+            <div class="container_writing-body">
+                <div class="container_component-writing-form"> 
+                    <app-writing-form></app-writing-form>   
                 </div>
-                <div class="container_component-vocabulary-list">
-                    <app-vocabulary-list></app-vocabulary-list> 
+                <div class="container_component-writing-list">
+                    <app-writing-list></app-writing-list> 
                 </div>
             </div>
-            
         `;
         }
 
@@ -80,4 +79,3 @@ export class BodyVocabulary extends LitElement {
 
 
 }
-

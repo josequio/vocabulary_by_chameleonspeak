@@ -1,5 +1,5 @@
 export const VOCABULARY_STATUS = {
-    ACTIVE: 'active',
-    COMPLETED: 'completed',
+    ACTIVE: 'new',
+    COMPLETED: 'learned',
     DELETED: 'deleted'
 };

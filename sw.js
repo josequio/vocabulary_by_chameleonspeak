@@ -49,8 +49,8 @@ setDefaultHandler(
 offlineFallback();
 staticResourceCache();
 
-/* precacheAndRoute([
-   {url: '/index.html', revision: true }
-]) */
+precacheAndRoute([
+   {url: '/offline.html', revision: true }
+])
 
 imageCache();
