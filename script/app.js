@@ -16,17 +16,15 @@ import tree from './state.js'
 import { Logout } from "./components/access/logout.js";
 
 
-const firebaseConfig = {
-    apiKey: "AIzaSyA7jPO890a464KgejnECiGzZoTQwYcyhlI",
-    authDomain: "vocabulary-eabbb.firebaseapp.com",
-    projectId: "vocabulary-eabbb",
-    storageBucket: "vocabulary-eabbb.appspot.com",
-    messagingSenderId: "255121755612",
-    appId: "1:255121755612:web:f19b812e6ce230fbaa5319"
-};
+let initializedApp;
+
+fetch('/__/firebase/init.json').then(async response => {
+    const config = await response.json();
+    initializedApp = initializeApp(config);
+})
 
 
-export const app = initializeApp(firebaseConfig);
+export const app = initializedApp;
 
 import("../script/firebase/auth.js").then(({ auth }) => {
     /* Verificar cambios en el estado de autenticacion */

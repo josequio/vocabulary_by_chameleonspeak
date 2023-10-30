@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js"
-      crossorigin="anonymous"></script>
-   <script type="importmap">
-   {
+  <head>
+    <script async="" src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
+    <script type="importmap">
+      {
      "imports": {
        "baobab": "https://ga.jspm.io/npm:baobab@2.6.1/dist/baobab.js",
        "firebase-app": "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js",
@@ -24,48 +22,76 @@
      }
    }
    </script>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-   <link rel="stylesheet" href="/index.css">
-   <title>Vocabulary</title>
-</head>
-
-<body>
-   <main>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="manifest" href="/manifest.json">
+    <title>Vocabulary</title>
+    <link rel="icon" type="image/png" sizes="196x196" href="images/icons2/favicon-196.png">
+    <link rel="apple-touch-icon" href="images/icons2/apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1668-2388.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2388-1668.jpg" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1536-2048.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2048-1536.jpg" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1668-2224.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2224-1668.jpg" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1620-2160.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2160-1620.jpg" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1290-2796.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2796-1290.jpg" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1179-2556.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2556-1179.jpg" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1284-2778.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2778-1284.jpg" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1170-2532.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2532-1170.jpg" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1125-2436.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2436-1125.jpg" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1242-2688.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2688-1242.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-828-1792.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1792-828.jpg" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1242-2208.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-2208-1242.jpg" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-750-1334.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1334-750.jpg" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-640-1136.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="images/icons2/apple-splash-1136-640.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  </head>
+  <body>
+    <main>
       <header class="header">
-         <a class="header_logo">
-            <img src="./images/icons/icon_logo.png" alt="logo de pagina">
-         </a>
-         <nav>
-            <app-logout></app-logout>
-         </nav>
+        <a class="header_logo">
+          <img src="./images/icons/icon_logo.png" alt="logo de pagina">
+        </a>
+        <nav>
+          <app-logout></app-logout>
+        </nav>
       </header>
       <app-error></app-error>
       <div class="container_sections">
-         <section class="presentation">
-            <div class="presentation_container">
-               <h2 class="title-design"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
-               <p>Vocabulary and Writing by ChamelonSpeak es una herramienta que complementa tú proceso de aprendizaje
-                  de un nuevo idioma, guarda nuevas palabra, crea oraciones y vizualiza el seguimiento de practica según
-                  los tiempos verbales. </p>
-               <app-access class="app-access" imagenSrc="/images/icons/icons8-logo-de-google-48.png">hola</app-access>
-            </div>
-         </section>
-
-         <section class="vocabulary" id="vocabulary">
-            <app-vocabulary-body></app-vocabulary-body>
-         </section>
-
-         <section class="writing" id="writing">
-            <app-writing-body></app-writing-body>
-         </section>
+        <section class="presentation">
+          <div class="presentation_container">
+            <h2 class="title-design"><span>Vocabulary</span> <span> by ChamelonSpeak</span></h2>
+            <p>Vocabulary and Writing by ChamelonSpeak es una herramienta que complementa tú proceso de aprendizaje
+              de un nuevo idioma, guarda nuevas palabra, crea oraciones y vizualiza el seguimiento de practica según
+              los tiempos verbales. </p>
+            <app-access class="app-access" imagensrc="/images/icons/icons8-logo-de-google-48.png">hola</app-access>
+          </div>
+        </section>
+        <section class="vocabulary" id="vocabulary">
+          <app-vocabulary-body></app-vocabulary-body>
+        </section>
+        <section class="writing" id="writing">
+          <app-writing-body></app-writing-body>
+        </section>
       </div>
       <app-vocabulary-footer></app-vocabulary-footer>
-   </main>
-
-  
-   <script type="module" src="./script/app.js"></script>
-</body>
-
+    </main>
+    <script type="module" src="./script/app.js"></script>
+  </body>
 </html>
